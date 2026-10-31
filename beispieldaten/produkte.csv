@@ -1,0 +1,8 @@
+artikelnummer,bezeichnung,preis,bestand
+P01,Demokabel,5.50,10
+P02,Demosensor,12.00,4
+P03,Demogehaeuse,8.90,8
+P04,Demostecker,2.50,30
+P05,Demohalterung,6.00,15
+P01,Demokabel neuer Preis,6.00,10
+P06,Produkt ohne Preis,,3

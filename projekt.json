@@ -1,0 +1,17 @@
+{
+  "id": "P09",
+  "status": "initialisiert",
+  "businessImplemented": false,
+  "fixture": "beispieldaten/produkte.csv",
+  "format": "csv",
+  "expectedRecords": 7,
+  "starter": "src/importieren.php",
+  "command": "php src/importieren.php",
+  "implementationTickets": [
+    "P09-T01",
+    "P09-T02",
+    "P09-T03",
+    "P09-T04"
+  ],
+  "language": "de"
+}
