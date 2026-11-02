@@ -1,6 +1,6 @@
 {
   "id": "P09",
-  "status": "initialisiert",
+  "status": "produktregeln_geprueft",
   "businessImplemented": false,
   "fixture": "beispieldaten/produkte.csv",
   "format": "csv",

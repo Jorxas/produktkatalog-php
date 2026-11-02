@@ -1,0 +1,24 @@
+{
+  "projekt": "P09",
+  "ticket": "P09-T01",
+  "geprueft_am_utc": "2026-11-01T13:17:24.858609+00:00",
+  "python_version": "3.12.14",
+  "eingabe": "beispieldaten/produkte.csv",
+  "eingabe_sha256": "a85cc8c878b5e8f3b996c8db1121cc9292fde70ae5f527811844bfb4ebe7ef71",
+  "anzahl_beispielzeilen": 7,
+  "struktur_gueltig": true,
+  "befunde": [
+    {
+      "art": "artikelnummer_doppelt",
+      "artikelnummer": "P01",
+      "csv_zeile": 7,
+      "erste_csv_zeile": 2
+    },
+    {
+      "art": "preis_fehlt",
+      "csv_zeile": 8
+    }
+  ],
+  "erwartung_erfuellt": true,
+  "grenze": "Lokale Datenpruefung; kein Import und keine Speicherung."
+}
