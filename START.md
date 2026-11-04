@@ -24,19 +24,30 @@ exit $pruefExitcode
 
 Der letzte Befehl beendet die Shell mit dem Prüfstatus; den Block in einer eigenen PowerShell ausführen. Gesichertes Ergebnis: [P09-T01-pruefung.json](nachweise/P09-T01-pruefung.json). Dateien unter `nachweise/` können von Git ausgeschlossen sein; der übergeordnete Dienst muss den Nachweis beim Sichern des Arbeitsstands ausdrücklich übernehmen.
 
-## Späterer PHP-Einstiegspunkt (in T01 nicht ausgeführt)
+## PHP-Import P09-T02 lokal ausführen
 
-Voraussetzungen: PHP mit PDO SQLite; MySQL oder MariaDB sowie die echte Plattform für entsprechende Varianten.
+Voraussetzung: 64-Bit-PHP mit PDO SQLite. Tatsächlich vorhanden: `C:\xampp\php\php.exe`, PHP 8.2.12, PDO SQLite mit SQLite 3.39.2. PHP steht hier nicht im PATH. Keine weiteren Pakete erforderlich. Im Projektordner ausführen:
 
 ~~~powershell
-php src/importieren.php
+& C:\xampp\php\php.exe src/importieren.php
 ~~~
 
-Das Startprogramm meldet den Initialisierungsstand. Fachfunktionen sind bewusst noch nicht implementiert und melden dies bei einem Aufruf. Fehlende Bibliotheken und Frameworks erst im passenden Ticket mit ihrer tatsächlichen Version ergänzen.
+Standard: `beispieldaten/produkte.csv` nach `ausgabe/katalog.sqlite`. Optional beide Pfade angeben: `& C:\xampp\php\php.exe src/importieren.php eingabe.csv ausgabe/mein-katalog.sqlite`. Das Ausgabe-Verzeichnis muss vorhanden sein. Neue Datenbankdateien werden angelegt; eine Migration älterer Datenbankschemata gehört nicht zu T02.
 
-## Nächste gesonderte Phase
+CSV: UTF-8 ohne BOM, Komma, exakt die Kopfzeile `artikelnummer,bezeichnung,preis,bestand`. Feldregeln aus T01 gelten; zusätzlich höchstens `999999999.99` für Preis und `2147483647` für Bestand. Preise werden ohne Gleitkommazahl als `preis_cent` gespeichert. Die erste Artikelnummer innerhalb einer Datei reserviert die Nummer auch bei einer ungültigen Zeile; weitere Vorkommen werden abgelehnt. Ein neuer Importlauf darf gültige Werte vorhandener Artikel aktualisieren.
 
-P09-T02: PHP-Import mit Eingabeprüfung und Speicherung. Erst nach eigener Freigabe beginnen. Die Lastenheft-Abnahme bleibt offen.
+JSON-Ausgabe zählt gelesene, angelegte, aktualisierte und abgelehnte Datensätze. Exitcode 0 bedeutet technisch abgeschlossenen Import, auch bei fachlichen Ablehnungen; Exitcode 1 technischen Fehler oder falsche Kopfzeile. Ein technischer Fehler innerhalb der Transaktion rollt den Lauf zurück. Ablehnungen stehen in `abgelehnte_zeilen` mit `laufnummer`, `csv_zeile`, unverändertem `originalzeile`-Inhalt und `fehler_json`; frühere Ablehnungen bleiben erhalten. `csv_zeile` zählt logische CSV-Datensätze einschließlich Kopfzeile, bei mehrzeiligen Feldern keine physischen Textzeilen.
+
+## Reproduzierbare lokale T02-Abnahme
+
+~~~powershell
+& C:\xampp\php\php.exe -l src/importieren.php
+uv run --offline --python 3.12 python -X utf8 nachweise/pruefe_php_import.py C:/xampp/php/php.exe
+~~~
+
+Die Abnahme startet echte PHP-CLI-Prozesse und liest die gespeicherte SQLite-Datei unabhängig mit Python 3.12.14/SQLite 3.53.1. Jeder Aufruf erhält einen neuen Unterordner in `ausgabe/`; keine Originaldaten werden ersetzt. Zwei Importe prüfen Anlage, Preisaktualisierung ohne doppeltes P01, Schutz bestehender Produkte, Nullwerte, ungültige Formate, Feldzahl und Zahlenbereiche. Alle elf Ablehnungen werden mit dem ursprünglichen CSV-Text verglichen. Eine falsche Kopfzeile wird mit Exitcode 1 ohne Datenänderung abgewiesen. Das Prüfprogramm endet bei erfüllter Erwartung mit Exitcode 0 und schreibt `nachweise/P09-T02-pruefung.json` selbst als UTF-8.
+
+Die konkreten Befehle und der geprüfte Datenbankpfad stehen im Bericht. Nachweise und die dort genannte Datenbank samt erzeugter Prüfeingaben müssen vom übergeordneten Dienst ausdrücklich gesichert werden; `nachweise/` und `ausgabe/` können von Git ausgeschlossen sein. Fertigstellung und Zeitmessung: [Abschlussnachweis](nachweise/P09-T02-abschluss.md). Veröffentlichung bleibt ausstehend. Shopansicht, Idempotenz-Gesamtabnahme und Plattformadapter gehören zu gesonderten Phasen.
 
 ## Technische Quellen
 

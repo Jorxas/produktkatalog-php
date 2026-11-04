@@ -1,0 +1,102 @@
+{
+  "projekt": "P09",
+  "ticket": "P09-T02",
+  "erwartung_erfuellt": true,
+  "geprueft_am_utc": "2026-11-03T02:02:41.263656+00:00",
+  "php_version": "PHP 8.2.12 (cli) (built: Oct 24 2023 21:15:15) (ZTS Visual C++ 2019 x64)",
+  "python_version": "3.12.14",
+  "sqlite_version_der_unabhaengigen_lesepruefung": "3.53.1",
+  "original_sha256": "a85cc8c878b5e8f3b996c8db1121cc9292fde70ae5f527811844bfb4ebe7ef71",
+  "anzahl_originaldatensaetze": 7,
+  "erster_import": {
+    "laufnummer": 1,
+    "gelesen": 7,
+    "angelegt": 5,
+    "aktualisiert": 0,
+    "abgelehnt": 2
+  },
+  "zweiter_import": {
+    "laufnummer": 2,
+    "gelesen": 11,
+    "angelegt": 1,
+    "aktualisiert": 1,
+    "abgelehnt": 9
+  },
+  "produkte_nach_zweitem_import": [
+    [
+      "P01",
+      "Demokabel neuer Preis",
+      600,
+      10
+    ],
+    [
+      "P02",
+      "Demosensor",
+      1200,
+      4
+    ],
+    [
+      "P03",
+      "Demogehaeuse",
+      890,
+      8
+    ],
+    [
+      "P04",
+      "Demostecker",
+      250,
+      30
+    ],
+    [
+      "P05",
+      "Demohalterung",
+      600,
+      15
+    ],
+    [
+      "P10",
+      "Erlaubte Nullwerte",
+      0,
+      0
+    ]
+  ],
+  "ablehnungen_dauerhaft_und_originalgetreu": 11,
+  "falsche_kopfzeile_ohne_datenveraenderung_abgewiesen": true,
+  "pruefordner": "ausgabe/P09-T02-e7f750c16c644e8e9f5451224a505832",
+  "befehle": [
+    {
+      "befehl": [
+        "C:/xampp/php/php.exe",
+        "src/importieren.php",
+        "<lokaler-pfad>",
+        "<lokaler-pfad>"
+      ],
+      "exitcode": 0,
+      "ausgabe": "{\n    \"laufnummer\": 1,\n    \"gelesen\": 7,\n    \"angelegt\": 5,\n    \"aktualisiert\": 0,\n    \"abgelehnt\": 2\n}",
+      "fehlerausgabe": ""
+    },
+    {
+      "befehl": [
+        "C:/xampp/php/php.exe",
+        "src/importieren.php",
+        "<lokaler-pfad>",
+        "<lokaler-pfad>"
+      ],
+      "exitcode": 0,
+      "ausgabe": "{\n    \"laufnummer\": 2,\n    \"gelesen\": 11,\n    \"angelegt\": 1,\n    \"aktualisiert\": 1,\n    \"abgelehnt\": 9\n}",
+      "fehlerausgabe": ""
+    },
+    {
+      "befehl": [
+        "C:/xampp/php/php.exe",
+        "src/importieren.php",
+        "<lokaler-pfad>",
+        "<lokaler-pfad>"
+      ],
+      "exitcode": 1,
+      "ausgabe": "",
+      "fehlerausgabe": "Import fehlgeschlagen: Die CSV-Kopfzeile entspricht nicht dem Datenvertrag."
+    }
+  ],
+  "grenze": "Nur PHP-CLI und SQLite; keine Shopansicht oder Plattformadapter, keine T04-Gesamtabnahme."
+}
