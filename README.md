@@ -1,6 +1,6 @@
 # Produktkatalog und Datenaustausch im E-Commerce
 
-Stand: 3. November 2026 — **P09-T02 lokal erledigt: PHP-Import mit SQLite geprüft; Shopansicht und Gesamtabnahme offen**. Veröffentlichung und Commit durch den übergeordneten Dienst stehen aus. Geplanter Abschluss der Basis: 2026-11-07, spätestens 8. November 2026. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
+Stand: 11. November 2026 — **P09-T03 lokal erledigt: Produktansicht und API-Vertragsentwurf geprüft; Gesamtabnahme offen**. Veröffentlichung und Commit durch den übergeordneten Dienst stehen aus. Ursprüngliches Basisziel 7./8. November verfehlt; Fortsetzung gemäß Freigabe für T03 am 11. November. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
 
 Ein kleiner Laden möchte einen Katalog importieren, ohne Preise zu verlieren oder Duplikate anzulegen.
 
@@ -29,7 +29,15 @@ Ausführung: [Startanleitung](START.md). Ergebnis: [Prüfprotokoll](nachweise/P0
 
 Tatsächlich ausgeführt: PHP 8.2.12 mit PDO SQLite 3.39.2. Erster Import: fünf Produkte, zwei Ablehnungen. Zweiter gezielter Import: P01 von 550 auf 600 Cent aktualisiert, ein gültiges Nullwertprodukt angelegt, neun fehlerhafte Zeilen abgelehnt; bestehende Werte geschützt. [Abnahmebericht](nachweise/P09-T02-pruefung.json) und [Abschlussnachweis](nachweise/P09-T02-abschluss.md). A1/A2 wurden für dieses lokale Szenario geprüft; die übergreifenden Lastenheftkriterien bleiben bis zur gesonderten Gesamtabnahme unverändert offen. Keine Shopansicht, keine Ausführung von Symfony, Shopware oder Pimcore. Folgephasen wurden nicht begonnen.
 
-[Erweiterungen](VARIANTEN.md) haben einen eigenen Umsetzungsstand. [Private Unternehmenszuordnung](UNTERNEHMEN.lokal.md) bleibt außerhalb der Git-Verwaltung.
+## Geprüfter Endpunkt P09-T03
+
+Die [PHP-Produktansicht](oeffentlich/index.php) zeigt die fünf gültigen Produkte und die zwei verständlichen Fehler des letzten Imports aus den sieben unveränderten Beispielzeilen. Preise erscheinen mit zwei Nachkommastellen; Währung und Steuerbezug sind ausdrücklich ungeklärt. Die Seite liest nur, importiert nichts und maskiert gespeicherte Texte für HTML.
+
+Der [API-Vertrag mit Shopware-Zuordnung](tickets/P09-T03.md) beschreibt einen späteren JSON-Lesezugriff und den Adapter zur echten Admin API. Das [Vertragsbeispiel](nachweise/P09-T03-vertragsbeispiel.json) wurde gegen SQLite geprüft. Keine laufende JSON-API, kein Plattformadapter und kein praktischer Shopware-/Pimcore-Nachweis. Echter Austausch bleibt ohne Instanz, Zugang und Preisdefinition blockiert; T03 ist auf Ansicht und Vertrag begrenzt.
+
+Tatsächlich geprüft über lokale PHP-HTTP-Prozesse: fünf Tabellenzeilen und zwei Fehler, HTTP 503 bei fehlender Datenbank, maskierte Sonderzeichen und sichtbare Nullwerte. [Prüfbericht](nachweise/P09-T03-pruefung.json), [Abschluss und Zeitmessung](nachweise/P09-T03-abschluss.md), Wiederholung in [START.md](START.md). Keine visuelle Browserabnahme. T04 und übergreifende Lastenheftabnahme bleiben offen.
+
+[Erweiterungen](VARIANTEN.md) haben einen eigenen Umsetzungsstand. Private Unternehmenszuordnungen sind nicht Teil dieses Arbeitsbaums.
 
 ## Projektsprache
 

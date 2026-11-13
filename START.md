@@ -49,6 +49,32 @@ Die Abnahme startet echte PHP-CLI-Prozesse und liest die gespeicherte SQLite-Dat
 
 Die konkreten Befehle und der geprüfte Datenbankpfad stehen im Bericht. Nachweise und die dort genannte Datenbank samt erzeugter Prüfeingaben müssen vom übergeordneten Dienst ausdrücklich gesichert werden; `nachweise/` und `ausgabe/` können von Git ausgeschlossen sein. Fertigstellung und Zeitmessung: [Abschlussnachweis](nachweise/P09-T02-abschluss.md). Veröffentlichung bleibt ausstehend. Shopansicht, Idempotenz-Gesamtabnahme und Plattformadapter gehören zu gesonderten Phasen.
 
+## Produktansicht und Vertragsprüfung P09-T03
+
+Voraussetzung bleibt PHP mit PDO SQLite, keine weiteren Pakete. Die HTML-Ansicht nutzt standardmäßig `ausgabe/katalog.sqlite`. Im Projektordner:
+
+~~~powershell
+& C:\xampp\php\php.exe src/importieren.php
+& C:\xampp\php\php.exe -S 127.0.0.1:8099 -t oeffentlich
+~~~
+
+Danach `http://127.0.0.1:8099/` öffnen; Server mit Strg+C beenden. Nur `oeffentlich/` ausliefern, damit CSV, Datenbank und Importskript nicht im Webverzeichnis liegen. Kein Import beim Seitenaufruf. Optional vor dem Serverstart `$env:KATALOG_DATENBANK = (Resolve-Path 'ausgabe/mein-katalog.sqlite').Path` setzen; anschließend mit `Remove-Item Env:KATALOG_DATENBANK` zurücksetzen. Keine HTTP-Auswahl des Datenbankpfads.
+
+Die Seite zeigt Produkte und ausschließlich Ablehnungen des letzten Importlaufs. Ohne Importlauf erscheint ein entsprechender Hinweis, ohne Produkte eine leere Tabelle. Fehlende/nicht lesbare Datenbank: HTTP 503 und verständliche Meldung. Keine Datei wird dafür angelegt. Preise bleiben lokale Preiseinheiten, da Währung und Steuerbezug ungeklärt sind.
+
+Kleinste automatisierte T03-Abnahme:
+
+~~~powershell
+& C:\xampp\php\php.exe -l oeffentlich/index.php
+uv run --offline --python 3.12 python -X utf8 nachweise/pruefe_produktansicht.py C:/xampp/php/php.exe
+~~~
+
+Erwartet: beide Exitcode 0. Das Prüfskript importiert die sieben unveränderten Originalzeilen einmal in eine neue Datenbank unter `ausgabe/P09-T03-…/`. Es startet PHP ausschließlich an `127.0.0.1` auf freien Ports und beendet jeden Server selbst. Geprüft werden tatsächlich ausgelieferte HTML-Tabellenwerte (fünf Produkte), beide Fehler, Antwort-Header, fehlende Datenbank (503, keine Dateianlage), maskierte Sonderzeichen und Nullwerte in einer separaten Kopie sowie unveränderte Originaldaten und Katalogdatenbank. Der JSON-Vertragsentwurf wird anhand seines vollständigen Beispiels mit den importierten Werten verglichen. Kein wiederholter Import, keine T04-Abnahme und keine visuelle Browserprüfung.
+
+Ergebnis wird als UTF-8 nach `nachweise/P09-T03-pruefung.json` geschrieben. Der Bericht nennt genaue Prozessbefehle, Laufzeitenversionen und den Ausgabeordner mit HTML-Antworten, Serverprotokollen und Datenbanken. Zur Wiederholung erforderlich: `nachweise/pruefe_produktansicht.py`, `nachweise/P09-T03-vertragsbeispiel.json`, `oeffentlich/index.php`, `src/importieren.php`, `sql/schema.sql` und `beispieldaten/produkte.csv` sowie diese Anleitung und [T03-Vertrag](tickets/P09-T03.md). Diese Dateien, Berichte und Ausgabeordner ausdrücklich durch den übergeordneten Dienst mitsichern; ignorierte Nachweise werden nicht automatisch veröffentlicht.
+
+Die geplante Route `/api/katalog` ist nicht implementiert. Der Adapter zur echten Shopware Admin API ist beschrieben und ungefertigt; vor seiner Ausführung sind Plattformzugang, Version, Rechte, Währung und Steuern zu klären. Keine Simulation ersetzt Shopware oder Pimcore.
+
 ## Technische Quellen
 
 - [Python-CSV-Modul](https://docs.python.org/3/library/csv.html)

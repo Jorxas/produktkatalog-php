@@ -1,6 +1,6 @@
 {
   "id": "P09",
-  "status": "php_import_sqlite_lokal_geprueft",
+  "status": "produktansicht_und_api_vertrag_lokal_geprueft",
   "businessImplemented": false,
   "fixture": "beispieldaten/produkte.csv",
   "format": "csv",

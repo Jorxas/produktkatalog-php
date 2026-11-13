@@ -1,0 +1,122 @@
+{
+  "projekt": "P09",
+  "ticket": "P09-T03",
+  "gesichert_am": "2026-11-11T01:07:11.897591+01:00",
+  "dateien": [
+    {
+      "pfad": "ARBEITSJOURNAL.md",
+      "sha256": "a29f0df04dab54390a707b5e249ccce18cd3f7e951edaa3be4da928ec8f88e72",
+      "bytes": 11357
+    },
+    {
+      "pfad": "LASTENHEFT.md",
+      "sha256": "653888ca0408ee4a189193b2bd3dcd4b29767f453f3165493c79a2fcd50e311d",
+      "bytes": 2121
+    },
+    {
+      "pfad": "README.md",
+      "sha256": "5faea0bfd19de77d5fdffcd4578a5d1e17ed2eacac8f1ee22e1d751f73578070",
+      "bytes": 4370
+    },
+    {
+      "pfad": "START.md",
+      "sha256": "b771194941c531fbd20d8ecc8445f54b3f0a9c1301ab2c7d4c132964652eedb6",
+      "bytes": 7824
+    },
+    {
+      "pfad": "ausgabe/P09-T03-35583893047d4f3b80466fe8bd635301/fehlende-datenbank-server.txt",
+      "sha256": "2634b337aee0ecbbf25f3690953703d30e30564dfec39ac34c77c2ee12e4b07f",
+      "bytes": 249
+    },
+    {
+      "pfad": "ausgabe/P09-T03-35583893047d4f3b80466fe8bd635301/fehlende-datenbank.html",
+      "sha256": "992b0184c32b34fc5e43ea52b82a6b3cd51cabe7a896a763c7d8814f2d7bdc9e",
+      "bytes": 1080
+    },
+    {
+      "pfad": "ausgabe/P09-T03-35583893047d4f3b80466fe8bd635301/katalog-server.txt",
+      "sha256": "014429d69942fd36dda63f8f9a3a999290177af37ecf6667ef6fe96f80fdcef6",
+      "bytes": 249
+    },
+    {
+      "pfad": "ausgabe/P09-T03-35583893047d4f3b80466fe8bd635301/katalog.html",
+      "sha256": "796eecd54584bde4ffb0b8a32f10abc08bfb96f04e3ef0f55f34e471fb4b5d54",
+      "bytes": 1964
+    },
+    {
+      "pfad": "ausgabe/P09-T03-35583893047d4f3b80466fe8bd635301/katalog.sqlite",
+      "sha256": "872bd14b42b05710917f7d804c89716ce17138aac8684a139f088ab48c3640be",
+      "bytes": 24576
+    },
+    {
+      "pfad": "ausgabe/P09-T03-35583893047d4f3b80466fe8bd635301/sonderzeichen-server.txt",
+      "sha256": "7b85cf63ea943419bb6d6107b7ce02fc7207d6da019e073bbe510154df53c914",
+      "bytes": 249
+    },
+    {
+      "pfad": "ausgabe/P09-T03-35583893047d4f3b80466fe8bd635301/sonderzeichen.html",
+      "sha256": "f86e512b0d17b500f84468d9bb7720b83abfaa25c41deb923331943d8491ab64",
+      "bytes": 2009
+    },
+    {
+      "pfad": "ausgabe/P09-T03-35583893047d4f3b80466fe8bd635301/sonderzeichen.sqlite",
+      "sha256": "580c969f2808b9457bb238949c693372aea06402dfa69411e6f225fa60cc6cf9",
+      "bytes": 24576
+    },
+    {
+      "pfad": "beispieldaten/produkte.csv",
+      "sha256": "a85cc8c878b5e8f3b996c8db1121cc9292fde70ae5f527811844bfb4ebe7ef71",
+      "bytes": 219
+    },
+    {
+      "pfad": "nachweise/P09-T03-abschluss.md",
+      "sha256": "55955a06cbab88d4e051c38b63bc9ea1e8d03eb997f663d20e0ec9659acb4082",
+      "bytes": 3219
+    },
+    {
+      "pfad": "nachweise/P09-T03-diff-pruefung.txt",
+      "sha256": "145cdf6e76920aa2ea00753201c6517f9a6a09859f8928225d9ac7946c6020a2",
+      "bytes": 183
+    },
+    {
+      "pfad": "nachweise/P09-T03-pruefung.json",
+      "sha256": "ea83b20ec0fa90b232d86bb9c0df9de50f42d08cab0d334da78202425d6917ec",
+      "bytes": 2681
+    },
+    {
+      "pfad": "nachweise/P09-T03-vertragsbeispiel.json",
+      "sha256": "2fb86eaa7607c8f93449cffc119d864d3a9de536d27ec534ed5ad3d0c6599889",
+      "bytes": 567
+    },
+    {
+      "pfad": "nachweise/pruefe_produktansicht.py",
+      "sha256": "52a1791a1dcb4b5777338f4e31af1951f9f3f345a2a610950fe84ca69d7eb72b",
+      "bytes": 7907
+    },
+    {
+      "pfad": "oeffentlich/index.php",
+      "sha256": "5376cae6475fef98eb5b9731638f1a443750ee6f5d841927dee2244d0a63954c",
+      "bytes": 4139
+    },
+    {
+      "pfad": "projekt.json",
+      "sha256": "84e93296b407f9ddcdd8659288e9e35eeacd6729016d56f550201c53a1243499",
+      "bytes": 403
+    },
+    {
+      "pfad": "sql/schema.sql",
+      "sha256": "76e5df68017cc96df0e74afd66093373b2e487c4ead6c0af15dacf04e5d55f48",
+      "bytes": 729
+    },
+    {
+      "pfad": "src/importieren.php",
+      "sha256": "5a06d88047df59b63d739e0e36c6b3f20a33a5536b1329f70adcd59b80240998",
+      "bytes": 5876
+    },
+    {
+      "pfad": "tickets/P09-T03.md",
+      "sha256": "8312c525935432d7a22559b0e320ea5ff1070b8bec13b99aac7771c32ae878b7",
+      "bytes": 7299
+    }
+  ]
+}
