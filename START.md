@@ -75,6 +75,22 @@ Ergebnis wird als UTF-8 nach `nachweise/P09-T03-pruefung.json` geschrieben. Der 
 
 Die geplante Route `/api/katalog` ist nicht implementiert. Der Adapter zur echten Shopware Admin API ist beschrieben und ungefertigt; vor seiner Ausführung sind Plattformzugang, Version, Rechte, Währung und Steuern zu klären. Keine Simulation ersetzt Shopware oder Pimcore.
 
+## Identischen Import wiederholen — P09-T04
+
+Im Projektordner mit der vorhandenen PHP-/Python-Laufzeit ausführen:
+
+~~~powershell
+uv run --offline --python 3.12 python -X utf8 nachweise/pruefe_idempotenz.py C:/xampp/php/php.exe
+~~~
+
+Erwartet: Exitcode 0. Keine zusätzlichen Pakete, Konten oder Server nötig. Das Skript startet zweimal `C:/xampp/php/php.exe src/importieren.php` mit derselben Original-CSV und derselben neuen Datenbank in einem eigenen Ausgabeunterordner. Es liest SQLite unabhängig mit Python und vergleicht alle vier Produktfelder, die fünf eindeutigen Artikelnummern, beide Importzähler und die originalgetreuen Ablehnungen samt Gründen. Die sieben vorhandenen Beispielzeilen bleiben unverändert; eine feste SHA256-Prüfsumme schützt ihren Ausgangsstand.
+
+Erster Lauf: fünf angelegt, null aktualisiert, zwei abgelehnt. Zweiter Lauf: null angelegt, fünf aktualisiert, zwei abgelehnt. Produktbestand unverändert, P01 weiterhin 550 Cent. Die Gesamtdatenbank wächst auf zwei Importläufe und vier Ablehnungen; `aktualisiert` zählt auch das erneute Setzen gleicher Werte. Keine globale Idempotenz der Importhistorie behauptet. Kein Shopware-Plugin oder Plattformtest; Einzelheiten und fehlende Plattformvoraussetzungen in [P09-T04](tickets/P09-T04.md).
+
+Das Skript schreibt `nachweise/P09-T04-pruefung.json` als UTF-8 mit tatsächlichen Befehlen, Exitcodes und beiden vollständigen Datenständen. Jeder Aufruf erstellt eine neue Datenbank; vorhandene Ausgaben bleiben erhalten. Zur Wiederholung erforderlich sind ausschließlich diese regulären Projektdateien: `nachweise/pruefe_idempotenz.py`, `src/importieren.php`, `sql/schema.sql` und `beispieldaten/produkte.csv`; Anleitung und Abnahmeumfang stehen in `START.md` und `tickets/P09-T04.md`. Keine T01–T03-Prüfskripte oder Vertragsbeispiele erforderlich.
+
+Der Bericht nennt die tatsächlich geprüfte SQLite-Datei. Diese Datei, Prüfskript, Prüfbericht, `nachweise/P09-T04-abschluss.md`, `nachweise/P09-T04-dateistand.json`, `nachweise/P09-T04-diff-pruefung.txt` sowie die erforderlichen Projektdateien ausdrücklich durch den übergeordneten Dienst mitsichern. Ignorierte Nachweise werden nicht automatisch veröffentlicht. Gesamtabnahme und echte Plattformvarianten bleiben offen; nach diesem Endpunkt keine weiteren Arbeiten.
+
 ## Technische Quellen
 
 - [Python-CSV-Modul](https://docs.python.org/3/library/csv.html)

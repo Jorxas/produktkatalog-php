@@ -1,6 +1,6 @@
 # Produktkatalog und Datenaustausch im E-Commerce
 
-Stand: 11. November 2026 — **P09-T03 lokal erledigt: Produktansicht und API-Vertragsentwurf geprüft; Gesamtabnahme offen**. Veröffentlichung und Commit durch den übergeordneten Dienst stehen aus. Ursprüngliches Basisziel 7./8. November verfehlt; Fortsetzung gemäß Freigabe für T03 am 11. November. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
+Stand: 13. November 2026 — **P09-T04 lokal erledigt: identischen Import wiederholt und Produktbestand verglichen; Gesamtabnahme offen**. Veröffentlichung und Commit durch den übergeordneten Dienst stehen aus. Ursprüngliches Basisziel 7./8. November verfehlt; Fortsetzung gemäß Einzelphasenfreigabe. Geschätzter Basisaufwand: 4 Stunden ohne Einrichtung und Erweiterungen.
 
 Ein kleiner Laden möchte einen Katalog importieren, ohne Preise zu verlieren oder Duplikate anzulegen.
 
@@ -35,7 +35,13 @@ Die [PHP-Produktansicht](oeffentlich/index.php) zeigt die fünf gültigen Produk
 
 Der [API-Vertrag mit Shopware-Zuordnung](tickets/P09-T03.md) beschreibt einen späteren JSON-Lesezugriff und den Adapter zur echten Admin API. Das [Vertragsbeispiel](nachweise/P09-T03-vertragsbeispiel.json) wurde gegen SQLite geprüft. Keine laufende JSON-API, kein Plattformadapter und kein praktischer Shopware-/Pimcore-Nachweis. Echter Austausch bleibt ohne Instanz, Zugang und Preisdefinition blockiert; T03 ist auf Ansicht und Vertrag begrenzt.
 
-Tatsächlich geprüft über lokale PHP-HTTP-Prozesse: fünf Tabellenzeilen und zwei Fehler, HTTP 503 bei fehlender Datenbank, maskierte Sonderzeichen und sichtbare Nullwerte. [Prüfbericht](nachweise/P09-T03-pruefung.json), [Abschluss und Zeitmessung](nachweise/P09-T03-abschluss.md), Wiederholung in [START.md](START.md). Keine visuelle Browserabnahme. T04 und übergreifende Lastenheftabnahme bleiben offen.
+Tatsächlich geprüft über lokale PHP-HTTP-Prozesse: fünf Tabellenzeilen und zwei Fehler, HTTP 503 bei fehlender Datenbank, maskierte Sonderzeichen und sichtbare Nullwerte. [Prüfbericht](nachweise/P09-T03-pruefung.json), [Abschluss und Zeitmessung](nachweise/P09-T03-abschluss.md), Wiederholung in [START.md](START.md). Keine visuelle Browserabnahme. T04 wurde gesondert am 13. November geprüft; die übergreifende Lastenheftabnahme bleibt offen.
+
+## Geprüfter Endpunkt P09-T04
+
+Zwei echte PHP-Importe derselben sieben unveränderten CSV-Datensätze in dieselbe neue SQLite-Datei ergeben jeweils genau dieselben fünf Produkte. Die Wiederholung legt keinen Artikel an; Bezeichnung, Preis und Bestand bleiben identisch. P01 bleibt bei 550 Cent. Beide Läufe lehnen CSV-Zeilen 7 und 8 ab. Idempotent ist der Produktbestand; die Importhistorie wächst auf zwei Läufe und vier Ablehnungen. Der Zähler `aktualisiert: 5` bedeutet hier vorhandene Artikel, keine fachliche Wertänderung.
+
+Der eigene PHP-CLI-Import mit SQLite ist kein Shopware-Plugin. Weder der Vertragsentwurf noch dieser Test belegen Shopware oder Pimcore; echte Plattformvarianten bleiben ohne Zugang und Ausführung blockiert. [Ticket und Abgrenzung](tickets/P09-T04.md), [Prüfbericht](nachweise/P09-T04-pruefung.json), [Abschluss](nachweise/P09-T04-abschluss.md). Kleinste Wiederholungsprüfung in [START.md](START.md). Nur T04 lokal abgenommen, keine Gesamtabnahme oder Folgephase.
 
 [Erweiterungen](VARIANTEN.md) haben einen eigenen Umsetzungsstand. Private Unternehmenszuordnungen sind nicht Teil dieses Arbeitsbaums.
 

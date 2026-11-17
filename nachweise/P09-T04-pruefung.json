@@ -1,0 +1,191 @@
+{
+  "projekt": "P09",
+  "ticket": "P09-T04",
+  "erwartung_erfuellt": true,
+  "geprueft_am_utc": "2026-11-13T09:40:15.087909+00:00",
+  "python_version": "3.12.14",
+  "sqlite_version_der_lesepruefung": "3.53.1",
+  "php_version": "PHP 8.2.12 (cli) (built: Oct 24 2023 21:15:15) (ZTS Visual C++ 2019 x64)",
+  "original_sha256": "a85cc8c878b5e8f3b996c8db1121cc9292fde70ae5f527811844bfb4ebe7ef71",
+  "anzahl_originaldatensaetze": 7,
+  "importe": [
+    {
+      "laufnummer": 1,
+      "gelesen": 7,
+      "angelegt": 5,
+      "aktualisiert": 0,
+      "abgelehnt": 2
+    },
+    {
+      "laufnummer": 2,
+      "gelesen": 7,
+      "angelegt": 0,
+      "aktualisiert": 5,
+      "abgelehnt": 2
+    }
+  ],
+  "staende": [
+    {
+      "produkte": [
+        [
+          "P01",
+          "Demokabel",
+          550,
+          10
+        ],
+        [
+          "P02",
+          "Demosensor",
+          1200,
+          4
+        ],
+        [
+          "P03",
+          "Demogehaeuse",
+          890,
+          8
+        ],
+        [
+          "P04",
+          "Demostecker",
+          250,
+          30
+        ],
+        [
+          "P05",
+          "Demohalterung",
+          600,
+          15
+        ]
+      ],
+      "importlaeufe": [
+        [
+          1,
+          "<lokaler-pfad>"
+        ]
+      ],
+      "ablehnungen": [
+        [
+          1,
+          7,
+          "P01,Demokabel neuer Preis,6.00,10\n",
+          "[\"Artikelnummer in dieser Datei doppelt; erstmals CSV-Zeile 2.\"]"
+        ],
+        [
+          1,
+          8,
+          "P06,Produkt ohne Preis,,3\n",
+          "[\"Preis fehlt oder ist kein nicht negativer Betrag mit zwei Nachkommastellen.\"]"
+        ]
+      ]
+    },
+    {
+      "produkte": [
+        [
+          "P01",
+          "Demokabel",
+          550,
+          10
+        ],
+        [
+          "P02",
+          "Demosensor",
+          1200,
+          4
+        ],
+        [
+          "P03",
+          "Demogehaeuse",
+          890,
+          8
+        ],
+        [
+          "P04",
+          "Demostecker",
+          250,
+          30
+        ],
+        [
+          "P05",
+          "Demohalterung",
+          600,
+          15
+        ]
+      ],
+      "importlaeufe": [
+        [
+          1,
+          "<lokaler-pfad>"
+        ],
+        [
+          2,
+          "<lokaler-pfad>"
+        ]
+      ],
+      "ablehnungen": [
+        [
+          1,
+          7,
+          "P01,Demokabel neuer Preis,6.00,10\n",
+          "[\"Artikelnummer in dieser Datei doppelt; erstmals CSV-Zeile 2.\"]"
+        ],
+        [
+          1,
+          8,
+          "P06,Produkt ohne Preis,,3\n",
+          "[\"Preis fehlt oder ist kein nicht negativer Betrag mit zwei Nachkommastellen.\"]"
+        ],
+        [
+          2,
+          7,
+          "P01,Demokabel neuer Preis,6.00,10\n",
+          "[\"Artikelnummer in dieser Datei doppelt; erstmals CSV-Zeile 2.\"]"
+        ],
+        [
+          2,
+          8,
+          "P06,Produkt ohne Preis,,3\n",
+          "[\"Preis fehlt oder ist kein nicht negativer Betrag mit zwei Nachkommastellen.\"]"
+        ]
+      ]
+    }
+  ],
+  "produktbestand_idempotent": true,
+  "gesamtdatenbank_idempotent": false,
+  "erklaerung": "Fuenf identische Produkte; zwei Importlaeufe und vier Ablehnungen. Aktualisiert zaehlt vorhandene Artikel, auch bei unveraenderten Werten.",
+  "grenze": "Eigener PHP-CLI-Import mit SQLite, kein Shopware-Plugin. Keine praktische Ausfuehrung von Shopware, Pimcore, Symfony oder MySQL; keine Gesamtabnahme.",
+  "datenbank": "ausgabe/P09-T04-09ce3bc4aac4441a8b89d9493a2eec69/katalog.sqlite",
+  "befehle": [
+    {
+      "befehl": [
+        "C:/xampp/php/php.exe",
+        "src/importieren.php",
+        "<lokaler-pfad>",
+        "<lokaler-pfad>"
+      ],
+      "exitcode": 0,
+      "ausgabe": "{\n    \"laufnummer\": 1,\n    \"gelesen\": 7,\n    \"angelegt\": 5,\n    \"aktualisiert\": 0,\n    \"abgelehnt\": 2\n}\n",
+      "fehlerausgabe": ""
+    },
+    {
+      "befehl": [
+        "C:/xampp/php/php.exe",
+        "src/importieren.php",
+        "<lokaler-pfad>",
+        "<lokaler-pfad>"
+      ],
+      "exitcode": 0,
+      "ausgabe": "{\n    \"laufnummer\": 2,\n    \"gelesen\": 7,\n    \"angelegt\": 0,\n    \"aktualisiert\": 5,\n    \"abgelehnt\": 2\n}\n",
+      "fehlerausgabe": ""
+    },
+    {
+      "befehl": [
+        "C:/xampp/php/php.exe",
+        "-v"
+      ],
+      "exitcode": 0,
+      "ausgabe": "PHP 8.2.12 (cli) (built: Oct 24 2023 21:15:15) (ZTS Visual C++ 2019 x64)\nCopyright (c) The PHP Group\nZend Engine v4.2.12, Copyright (c) Zend Technologies\n",
+      "fehlerausgabe": ""
+    }
+  ]
+}
