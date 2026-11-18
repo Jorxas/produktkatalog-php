@@ -1,0 +1,71 @@
+{
+    "projekt":  "P09",
+    "ticket":  "P09-T02",
+    "gesichert_am":  "2026-11-03T03:04:32.3515539+01:00",
+    "dateien":  [
+                    {
+                        "pfad":  "src/importieren.php",
+                        "sha256":  "5a06d88047df59b63d739e0e36c6b3f20a33a5536b1329f70adcd59b80240998"
+                    },
+                    {
+                        "pfad":  "sql/schema.sql",
+                        "sha256":  "76e5df68017cc96df0e74afd66093373b2e487c4ead6c0af15dacf04e5d55f48"
+                    },
+                    {
+                        "pfad":  "beispieldaten/produkte.csv",
+                        "sha256":  "a85cc8c878b5e8f3b996c8db1121cc9292fde70ae5f527811844bfb4ebe7ef71"
+                    },
+                    {
+                        "pfad":  "README.md",
+                        "sha256":  "0aa7399134137b861b23ddcdc9b4894d4ed33a671ccf4707d0f0cd9efcba0cd0"
+                    },
+                    {
+                        "pfad":  "START.md",
+                        "sha256":  "43c7c64d6df4a0cefd0f7835a7c64fcc6f38562ee7ffa557f4f05a01e2fe32f7"
+                    },
+                    {
+                        "pfad":  "ARBEITSJOURNAL.md",
+                        "sha256":  "d329162e261c2fc60b0b6514350af3ba2990f56a49db2c45a0fe322cd53f3262"
+                    },
+                    {
+                        "pfad":  "projekt.json",
+                        "sha256":  "fb863566b937597db0dd1373cb229407c7c4dffd00e4d70065354904b8a6581f"
+                    },
+                    {
+                        "pfad":  "tickets/P09-T02.md",
+                        "sha256":  "15e5391399406b2280c79d12c88c353e41abc3be048579f846a42247b96b6964"
+                    },
+                    {
+                        "pfad":  "nachweise/pruefe_php_import.py",
+                        "sha256":  "b223e73d6fc1a0bf505ee8eb5d9053255f6494f1ddefb983a54795de6af2b581"
+                    },
+                    {
+                        "pfad":  "nachweise/P09-T02-pruefung.json",
+                        "sha256":  "828360be42baf1be037b7994f21cf9e714eda97f4a796ed864fc52310cbd8b44"
+                    },
+                    {
+                        "pfad":  "nachweise/P09-T02-laufzeit.txt",
+                        "sha256":  "1f97750d3e169ee12247c321402765b2b6d32bf0e2fbd430104c4e088373744e"
+                    },
+                    {
+                        "pfad":  "nachweise/P09-T02-diff-pruefung.txt",
+                        "sha256":  "4d2d87f0a72eb7a9c3820b49165a6e32903383dee0aa2f73c2bb5df8abaa577f"
+                    },
+                    {
+                        "pfad":  "nachweise/P09-T02-abschluss.md",
+                        "sha256":  "a15e502dbfe6a775091bcf8d13f3874715750606c226a0645cbdd957a6c4c00a"
+                    },
+                    {
+                        "pfad":  "ausgabe/P09-T02-e7f750c16c644e8e9f5451224a505832/katalog.sqlite",
+                        "sha256":  "c075c0f02abf014fca29e49bbcf865cd70dd9904f2ffece8a0694380e28f6704"
+                    },
+                    {
+                        "pfad":  "ausgabe/P09-T02-e7f750c16c644e8e9f5451224a505832/aktualisierung.csv",
+                        "sha256":  "6151d3f425e9555766acde32d64a9ebd9bb3602a709853342bef00151185ebb7"
+                    },
+                    {
+                        "pfad":  "ausgabe/P09-T02-e7f750c16c644e8e9f5451224a505832/falscher_kopf.csv",
+                        "sha256":  "93703ca4bbb676e760da18c3315df6b276ac49349904d3b9fe61018f4f3e1cdc"
+                    }
+                ]
+}

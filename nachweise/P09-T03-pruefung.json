@@ -1,0 +1,79 @@
+{
+  "projekt": "P09",
+  "ticket": "P09-T03",
+  "erwartung_erfuellt": true,
+  "geprueft_am_utc": "2026-11-11T00:03:13.245026+00:00",
+  "python_version": "3.12.14",
+  "php_version": "PHP 8.2.12 (cli) (built: Oct 24 2023 21:15:15) (ZTS Visual C++ 2019 x64)",
+  "original_sha256": "a85cc8c878b5e8f3b996c8db1121cc9292fde70ae5f527811844bfb4ebe7ef71",
+  "anzahl_originaldatensaetze": 7,
+  "importbefehl": [
+    "C:/xampp/php/php.exe",
+    "src/importieren.php",
+    "<lokaler-pfad>",
+    "<lokaler-pfad>"
+  ],
+  "importergebnis": {
+    "laufnummer": 1,
+    "gelesen": 7,
+    "angelegt": 5,
+    "aktualisiert": 0,
+    "abgelehnt": 2
+  },
+  "serverbefehle": [
+    {
+      "befehl": [
+        "C:/xampp/php/php.exe",
+        "-S",
+        "127.0.0.1:60802",
+        "-t",
+        "oeffentlich"
+      ],
+      "KATALOG_DATENBANK": "ausgabe\\P09-T03-35583893047d4f3b80466fe8bd635301\\katalog.sqlite"
+    },
+    {
+      "befehl": [
+        "C:/xampp/php/php.exe",
+        "-S",
+        "127.0.0.1:60804",
+        "-t",
+        "oeffentlich"
+      ],
+      "KATALOG_DATENBANK": "ausgabe\\P09-T03-35583893047d4f3b80466fe8bd635301\\fehlt.sqlite"
+    },
+    {
+      "befehl": [
+        "C:/xampp/php/php.exe",
+        "-S",
+        "127.0.0.1:60806",
+        "-t",
+        "oeffentlich"
+      ],
+      "KATALOG_DATENBANK": "ausgabe\\P09-T03-35583893047d4f3b80466fe8bd635301\\sonderzeichen.sqlite"
+    }
+  ],
+  "http_ergebnisse": [
+    {
+      "szenario": "katalog",
+      "status": 200,
+      "html": "ausgabe/P09-T03-35583893047d4f3b80466fe8bd635301/katalog.html"
+    },
+    {
+      "szenario": "fehlende-datenbank",
+      "status": 503,
+      "html": "ausgabe/P09-T03-35583893047d4f3b80466fe8bd635301/fehlende-datenbank.html"
+    },
+    {
+      "szenario": "sonderzeichen",
+      "status": 200,
+      "html": "ausgabe/P09-T03-35583893047d4f3b80466fe8bd635301/sonderzeichen.html"
+    }
+  ],
+  "sichtbare_produkte": 5,
+  "sichtbare_importfehler": 2,
+  "vertragsbeispiel_entspricht_datenbank": true,
+  "sonderzeichen_und_nullwerte_geprueft": true,
+  "ansicht_ohne_datenveraenderung": true,
+  "pruefordner": "ausgabe/P09-T03-35583893047d4f3b80466fe8bd635301",
+  "grenze": "HTTP-Inhalt und Tabellenstruktur lokal geprueft; keine visuelle Browserabnahme, keine laufende JSON-API, kein Shopware/Pimcore, keine T04-Abnahme."
+}

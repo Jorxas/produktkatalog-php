@@ -1,0 +1,73 @@
+{
+  "projekt": "P09",
+  "ticket": "P09-T04",
+  "gesichert_am_utc": "2026-11-13T09:42:26.161292+00:00",
+  "hinweis": "Pruefsummen dieses lokalen Stands; unveraenderliche Uebernahme und spaeterer Commit durch uebergeordneten Dienst ausstehend. Manifest enthaelt sich nicht selbst.",
+  "dateien": [
+    {
+      "pfad": "README.md",
+      "bytes": 5414,
+      "sha256": "9996d60dd10e70a5e9728fbf47c434f5003ac005422df4491230e9cb26b6f245"
+    },
+    {
+      "pfad": "START.md",
+      "bytes": 10141,
+      "sha256": "2e211e91158a11f6e88a6c8989e25d2f0b17154fe728e6d1264d144677042405"
+    },
+    {
+      "pfad": "ARBEITSJOURNAL.md",
+      "bytes": 14601,
+      "sha256": "3ceefe0f3b00d695780de9ba3e254982ac23d5e3a6e85e54bccb828e32e3f3ca"
+    },
+    {
+      "pfad": "projekt.json",
+      "bytes": 403,
+      "sha256": "f96e50aeb0ead80ae5a02d6d063350b99f97688ad6db97dc2c26ebdc4c684d61"
+    },
+    {
+      "pfad": "tickets/P09-T04.md",
+      "bytes": 4294,
+      "sha256": "796a798e2a79868c53f9c59fd2c4ea38ea486a3d25a2db5817b000062d8a4271"
+    },
+    {
+      "pfad": "nachweise/pruefe_idempotenz.py",
+      "bytes": 6149,
+      "sha256": "5b72671a62b0f2576822e0d107d0020912c29891dac60f4e59b110bbc53f82a5"
+    },
+    {
+      "pfad": "src/importieren.php",
+      "bytes": 5876,
+      "sha256": "5a06d88047df59b63d739e0e36c6b3f20a33a5536b1329f70adcd59b80240998"
+    },
+    {
+      "pfad": "sql/schema.sql",
+      "bytes": 729,
+      "sha256": "76e5df68017cc96df0e74afd66093373b2e487c4ead6c0af15dacf04e5d55f48"
+    },
+    {
+      "pfad": "beispieldaten/produkte.csv",
+      "bytes": 219,
+      "sha256": "a85cc8c878b5e8f3b996c8db1121cc9292fde70ae5f527811844bfb4ebe7ef71"
+    },
+    {
+      "pfad": "nachweise/P09-T04-pruefung.json",
+      "bytes": 5753,
+      "sha256": "953dd624f270c7ebdd024e3a83eebb6579a15714e8a72bc5fb4716f293aad1ab"
+    },
+    {
+      "pfad": "nachweise/P09-T04-abschluss.md",
+      "bytes": 3740,
+      "sha256": "bc6851ac92a36e72738c8666575e65f009d5c66705813c814e1f18227ec2d7b5"
+    },
+    {
+      "pfad": "nachweise/P09-T04-diff-pruefung.txt",
+      "bytes": 513,
+      "sha256": "d04a985bde750f44beb3159545596b5b6714b611e27a782f795e4ff33b75aff7"
+    },
+    {
+      "pfad": "ausgabe/P09-T04-09ce3bc4aac4441a8b89d9493a2eec69/katalog.sqlite",
+      "bytes": 24576,
+      "sha256": "498de8ec575db4ec9e0c536ebf57723c369d78f10f20680af22af99016b61497"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "projekt": "P09",
+  "phase": 4,
+  "snapshot": "8f77666670fc1b7bac737c01b000a3975ec2621cdbbe0fac81963457aa0a1f45",
+  "quellcommit": "87299776808b83c597f50cf467b9da05fc788e65",
+  "lokal_committet_am": "2026-11-17T06:02:30+01:00",
+  "technisch_gesichert_am": "2026-11-13T09:38:54.532Z",
+  "unveraenderlicher_quellstand_geprueft": true,
+  "redaktionell_angepasst": [
+    "nachweise/P09-T01-pruefung.json",
+    "nachweise/P09-T02-dateistand.json",
+    "nachweise/P09-T02-pruefung.json",
+    "nachweise/P09-T03-pruefung.json",
+    "nachweise/P09-T04-pruefung.json"
+  ],
+  "hinweis": "Lokale Pfade in Berichten entfernt; Quellprogramme nicht übersetzt oder simuliert. Die erste öffentliche Übernahme ist kein nachträglich erfundener Entwicklungsschritt. Native Produktnachweise behalten ihre ursprünglichen tatsächlichen Zeiten.",
+  "veroeffentlichungskopie_fachlich_geprueft_am": "2026-11-18T15:21:50.049Z"
+}

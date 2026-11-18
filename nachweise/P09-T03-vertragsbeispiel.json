@@ -1,0 +1,12 @@
+{
+  "vertragsversion": 1,
+  "waehrung": null,
+  "steuerbezug": "ungeklaert",
+  "produkte": [
+    {"artikelnummer": "P01", "bezeichnung": "Demokabel", "preis_cent": 550, "bestand": 10},
+    {"artikelnummer": "P02", "bezeichnung": "Demosensor", "preis_cent": 1200, "bestand": 4},
+    {"artikelnummer": "P03", "bezeichnung": "Demogehaeuse", "preis_cent": 890, "bestand": 8},
+    {"artikelnummer": "P04", "bezeichnung": "Demostecker", "preis_cent": 250, "bestand": 30},
+    {"artikelnummer": "P05", "bezeichnung": "Demohalterung", "preis_cent": 600, "bestand": 15}
+  ]
+}
